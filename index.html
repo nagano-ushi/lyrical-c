@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="/lyrical-c/reset.css">
+		<link rel="stylesheet" href="/lyrical-c/style.css">
+		<title>lyrical.c0203</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
+		<!-- <script src="tf.min.js"></script> -->
+		<script src="https://unpkg.com/@microsoft/customvision-tfjs@1.3.0"></script>
+		<!-- <script src="index.umd.js"></script> -->
+		<meta name="robots" content="noodp ,NOINDEX , NOFOLLOW"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+
+		<link rel="icon" href="/lyrical-c/icon/c_favicon.ico"><!-- 512×512 -->
+        <link rel="icon" href="/lyrical-c/icon/c_icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/lyrical-c/icon/c_apple-touch-icon.png">
+        <!-- <link rel="manifest" href="/lyrical-c/icon/c_manifest.json" crossorigin="use-credentials"> -->
+        <meta name="theme-color" content="#fffbbd"/>
+        <meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="your_title">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_16.png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_20.png" sizes="20x20">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_24.png" sizes="24x24">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_29.png" sizes="29x29">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_32.png" sizes="32x32">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_40.png" sizes="40x40">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_48.png" sizes="48x48">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_50.png" sizes="50x50">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_57.png" sizes="57x57">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_64.png" sizes="64x64">	
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="/lyrical-c/icon/c_114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="/lyrical-c/icon/c_120.png" sizes="120x120">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_128.png" sizes="128x128">
+        <link rel="apple-touch-icon" href="/lyrical-c/icon/c_144.png" sizes="144x144">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_192.png" sizes="192x192">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_256.png" sizes="256x256">
+		<link rel="apple-touch-icon" href="/lyrical-c/icon/c_512.png" sizes="512x512">
+        <!-- Add to splash screen for Safari on iOS -->
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_320x568.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_360x640.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_360x800.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_375x667.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_375x812.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_383x812.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_390x844.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_414x736.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_414x986.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_428x926.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_640x960.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_640x1136.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_744x1133.png">
+
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_750x1334.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_768x1024.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_834x1194.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_960x1440.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1024x768.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1024x1366.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1125x2436.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1242x2208.png">
+
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1242x2688.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1536x2048.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1668x2224.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_2048x1536.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_2048x2732.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_2208x1242.png">
+		<link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_2224x1668.png">
+
+
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" and (orientation: any)"> 
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" and (orientation: any)"> 
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" and (orientation: any)">
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" and (orientation: any)"> 
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)" and (orientation: any)">
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2)" and (orientation: any)"> 
+        <link rel="apple-touch-startup-image" href="/lyrical-c/screen/c_2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) " and (orientation: any)"> 
+     
+
+
+
+
+	</head>
+	<body>
+
+		<script>
+			// manifestのlinkタグを生成
+			function setManifest(path) {
+				const manifest = document.createElement('link');
+				manifest.rel = 'manifest';
+				manifest.href = path;
+				document.head.appendChild(manifest);
+			}
+	
+			// OSに応じて読み込むmanifestを変更
+			var userAgent = navigator.userAgent.toLowerCase();
+			if (userAgent.indexOf("iphone") > 0 || userAgent.indexOf("ipad") > 0) {
+				setManifest('manifest_ios.json')
+			} else {
+				setManifest('manifest.json')
+			}
+			</script>  
+
+
+<!--
+
+		<div style="text-align:center; height:3rem; border:1px solid rgba(128, 128, 128, 0);">
+			<div style="display:inline-block; width:15rem; height:1.5rem; background:rgba(165, 199, 137,0);font-size: 1.0rem;">ImageClassificationSample</div>
+		<div style="text-align:center; height:3rem; border:1px solid rgba(128, 128, 128, 0);">
+			<div style="display:inline-block; width:15rem; height:2rem; background:rgba(165, 199, 137,0);font-size: 0.1rem;">引用：https://github.com/Azure-Samples/customvision-export-samples.git</div>
+		<div style="text-align:center; height:10rem; border:1px solid rgba(128, 128, 128, 0);">
+			<div style="display:inline-block; width:8.5rem; height:6rem; background:rgba(165, 199, 137,0);font-size: 1rem;">分類１は４分未満　分類２は５～６分　分類３は７～８分　分類４は９分以上　</div>	
+		-->
+            <!--
+			<div style="display:flex; justify-content:center; height:6rem; border:1px solid rgba(128, 128, 128, 0);">
+			<div style="justify-content:center; height:12rem; width:9rem; background:rgba(196, 128, 128, 0);font-size: 1rem;">分類１は４分未満　分類２は５～６分　分類３は７～８分　分類４は９分以上　</div>
+			
+			</div>     -->
+
+			<section data-bs-version="5.1" class="menu menu1 cid-s48OLK6784" once="menu" id="menu1-h">
+      
+  
+				<nav class="navbar navbar-dropdown navbar-expand-lg">
+					<div class="container1">
+						<div class="navbar-brand">
+							<!-- <span class="navbar-caption-wrap"><a class="navbar-caption text-white text-primary display-7" href="http://www.sko.janis.or.jp/~nogyoshiken/">リンク掲載ページへ</a></span> -->
+							<!-- <span class="navbar-caption-wrap"><a class="navbar-caption text-white text-primary display-7" href="index.html">トップページ</a></span> -->
+						</div>
+						<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+							<div class="hamburger">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</button> -->
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<!-- <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white text-primary display-7">〇〇県〇〇試験場</a> -->
+							<!--<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white text-primary display-7" href="page6.html">画像分類WebApp</a> -->
+							</li></ul>
+							
+							
+						</div>
+					</div>
+				</nav>
+			</section>
+
+		
+		
+		
+		
+		<div class="container">
+
+			<!-- <h1>HTMLcamera</h1> -->
+			<!-- <h2>250x250px</h2> -->
+
+		    <!-- <h4>サマーリリカルの着色程度の判定</h4> -->
+			<h3>ヘタを上に<br>果実を大きく撮影しましょう！</h3>
+			<div calss="box"><video muted autoplay playsinline id="camera" class=camera, width="250" height="250"></video></div>
+			
+			<div class="nodisplay_box"><canvas id="picture" width="250" height="250"></canvas></div>
+			<h1><button type="button : center" id="shutter">______撮______影______</button></h1>
+			<h5></h5>
+			<h2><button type="button : center" id="reload">__更____新__</button></h2>
+		
+		  </div>
+				
+		<audio id="se" preload="auto">
+ 		<source src="/lyrical-c/camera1.mp3" type="audio/mp3">
+		</audio>	
+				
+		<script>
+		window.onload = () => {
+		  const video  = document.querySelector("#camera");
+		  const canvas = document.querySelector("#picture");
+		  const se     = document.querySelector('#se');
+		
+		  /** カメラ設定 */
+		  const constraints = {
+			audio: false,
+			video: {
+			  width: 250,
+			  height: 250,
+			  facingMode: "user"   // フロントカメラを利用する
+			  //facingMode: { exact: "environment" }  // リアカメラを利用する場合
+			}
+		  };
+		
+		  /**
+		   * カメラを<video>と同期
+		   */
+		  navigator.mediaDevices.getUserMedia(constraints)
+		  .then(function(stream) {
+		  var video = document.querySelector('video');
+		  video.srcObject = stream
+		  video.onloadedmetadata = function(e) {
+			video.play();
+		  };
+		  })
+		  .catch(function(err) {
+		  console.log(err.name + ": " + err.message);
+		  });
+		  
+		  /**
+		   * シャッターボタン
+		   */
+		  document.querySelector("#shutter").addEventListener("click", () => {
+		  const ctx = canvas.getContext("2d");
+		
+		
+		  video.pause();  // 映像を停止
+		  se.play();      // 音			    
+		  setTimeout( () => {
+		  video.play();    // 0.5秒後にカメラ再開
+		  }, 500);
+			// canvasに画像を貼り付ける
+		  ctx.drawImage(video, 0, 0, canvas.width, canvas.height,);
+		  const a = document.createElement("a");
+		  a.href = canvas.toDataURL("image/png", 1.0); // PNGなら"image/png"
+		  a.download = "image.png";
+		  a.click();
+		  });
+		
+		  /**
+		   * 更新ボタン
+		   */
+		  document.querySelector("#reload").addEventListener("click", () => {
+		  window.location.reload(true);
+		  });
+		
+		
+		
+		
+		}
+		</script>
+		<h6>-----------------------------------------</h6>
+		<h5>サマーリリカル用<br>着色程度の判定</h5>
+		<h4>画像を選択すると下に結果を表示します。<br>大きい画像は時間がかかります。</h4>
+		
+
+		<p><input id="image_file" type="file" text-align:center onChange="load(event)"/></p>
+
+		
+		<p><img id="image_view" text-align:center onLoad="run()" /></p>
+		
+		<h5>３～４分,５～６分,７～８分</h5>
+		<div id="result_view"></div>
+		<h5></h5>
+		<h5>（注意事項）<br>画質や果実の写り方により<br>結果が左右されます。</h5>
+
+		<script>
+			function load(event) {
+				const reader = new FileReader();
+				reader.onload = async function(e) {
+					const image_view = document.getElementById('image_view');
+					image_view.src = e.target.result;
+				};
+				reader.readAsDataURL(event.target.files[0]);
+			}
+
+			async function run() {
+				const model = new cvstfjs.ClassificationModel();
+				await model.loadModelAsync('/lyrical-c/model.json');
+				const result = await model.executeAsync(document.getElementById('image_view'));		
+				//document.getElementById('result_view').innerHTML = result[0].map((x, i) => `分類　${i=i+1}　:　 ${parseInt(x=x*100)} ％`).join("<br />");0.00表示
+				//document.getElementById('result_view').innerHTML = result[0].map((x, i) => `分類${i=i+1}の可能性　:　 ${(x=x*100).toFixed(1)} ％`).join("<br />") 100%小数点以下第1位まで
+				
+				document.getElementById('result_view').innerHTML = result[0].map((x, i) =>` ${(x=x*100).toFixed(1)}％    `);//.join("<br />");
+				// document.getElementById('result_view').innerHTML = result[0].map((x, i) => `Label ${i}: ${x}`).join("<br />");
+				
+
+
+			}
+		</script>
+
+		
+			
+		
+		
+		<script>
+
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('serviceWorker.js').then(reg => {
+				console.log('サービスワーカーを登録しました', reg);
+				}).catch(err => {
+				console.log('登録失敗', err);
+				});
+			}
+			</script>
+
+
+
+
+
+
+
+	</body>
+</html>

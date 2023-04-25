@@ -1,0 +1,156 @@
+  .container1 {
+    text-align: center;
+    padding:0%;
+    color: rgb(0, 0, 0, 1);
+    background-color: rgb(130, 245, 174);
+    margin:auto;
+    padding:1px;
+    font-weight: bold;
+    border-radius: 20px 20px 20px 20px;
+  }
+  
+  .container {
+    text-align: center;
+    padding:0%;
+  }
+  
+  h1 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 18px;
+    padding:2px;
+    margin:10px auto;     
+    border: 2px dotted rgb(0, 0, 0, 1);
+    border-radius: 5px;
+    background-color: rgb(150, 150, 150, 0.9);
+    color: rgb(0, 0, 0, 1);
+    width: 250px;
+    
+
+  }
+
+  h2 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 18px;
+    padding:2px;
+    margin:10px auto;     
+    border: 2px dotted rgb(0, 0, 0, 1);
+    border-radius: 5px;
+    background-color: rgb(150, 150, 150, 0.9);
+    color: rgb(0, 0, 0, 1);
+    width: 150px;
+  }
+
+  h3 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 16px;
+    padding:5px;
+    background-color: rgb(150, 150, 150, 0.3);
+    color: rgb(255, 0, 0);
+    border-radius: 20px 20px 20px 20px;
+    font-weight: bold;
+  }
+
+
+
+  h4 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 18px;
+    margin:auto;
+    padding:1px;
+    font-weight: bold;
+  }
+
+  h5 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 24px;
+    padding:1px;
+    font-weight: bold;
+    padding:5px;
+
+  }
+  
+
+  .result_view {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 24px;
+    padding:1px;
+    font-weight: bold;
+
+
+   
+    
+  }
+
+
+
+  h6 {
+    /* 水平方向の中央揃え */
+    text-align: center;
+    font-size: 14px;
+    margin:0;
+    padding:0;
+  }
+
+  p {
+    /* 水平方向の中央揃え */
+    /*text-align: center;*/
+    text-align: center;
+    font-size: 16px;
+    margin:0;
+    padding:0;
+  }
+
+
+
+
+
+
+
+
+    
+
+
+  div {
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    width: 350px;
+    }
+
+  .nodisplay_box {
+
+    display: none;
+}
+body {
+  
+
+  
+  /* 画像ファイルの指定 */
+
+  background-color:rgb(255, 255, 255, 0.5);
+  background-image: url(/lyrical-c/haikeilyrical.jpg);
+  background-size:cover;
+  background-blend-mode:lighten;
+  background-repeat:no-repeat;
+
+
+
+   
+  /* 画像を常に天地左右の中央に配置 */
+  /*background-position: center center;*/
+     
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  /*background-attachment: fixed;*/
+
+
+
+  
+
+
+}
